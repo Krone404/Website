@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+
+    <div id="header" class="container mx-auto">
+        <div class="navbar-nav navBar">
+            <button class="navbar-item navButton" onclick="scrollElementIntoView('home')">Home</button>
+            <button class="navbar-item navButton" onclick="scrollElementIntoView('about-me')">About Me</button>
+            <button class="navbar-item navButton" onclick="scrollElementIntoView('projects')">Projects</button>
+            <button class="navbar-item navButton" onclick="scrollElementIntoView('social-media')">Social Media</button>
+        </div>
+    </div>
+
+    <div id="main">
+        <section id="home" class="container mx-auto pageBox">
+            <div>
+                <h1>Welcome to my portfolio!</h1>
+                <p>
+                    I am Cameron, a passionate software engineering student at Bournemouth University. 
+                    Here, you'll find a showcase of my projects, skills, and experiences. 
+                    Feel free to explore and connect with me through the social media links provided. 
+                    Enjoy your visit!
+                </p>
+            </div>
+        </section>
+
+        <section id="about-me" class="container mx-auto pageBox">
+            <div>
+                <h1>About Me</h1>
+                <p>
+                    Hi! I'm Cameron, a Software Engineering student at Bournemouth University. 
+                    I love tech and creating cool solutions to everyday problems. 
+                    I've learned a lot about programming with Java, Python, and JavaScript, 
+                    and I enjoy web development with HTML, CSS, React, and Node.js. 
+                    I'm also familiar with Agile methods, Git, and database management with SQL and MongoDB. 
+                    I believe in always learning and working together with others. 
+                    My goal is to work on projects that make a difference and be part of a tech community that’s always pushing boundaries.
+                </p>
+                <a href="./CV/CV_Public.pdf" download="CV_Public.pdf" class="download-button">Download</a>
+            </div>
+        </section>
+
+        <section id="projects" class="container mx-auto pageBox">
+            <div>
+                <h1>Projects</h1>
+                <p>Project details</p>
+                <div>
+                    <a href="https://example.com/project1">
+                        <h3>Project 1</h3>
+                        <p>A brief description of Project 1.</p>
+                        <time dateTime="2023-09-01">September 1, 2023</time>
+                    </a>
+                </div>
+                <div>
+                    <a href="https://example.com/project2">
+                        <h3>Project 2</h3>
+                        <p>A brief description of Project 2.</p>
+                        <time dateTime="2023-08-15">August 15, 2023</time>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="social-media" class="container mx-auto pageBox">
+            <div>
+                <h1>Social Media</h1>
+                <a href="https://www.linkedin.com/in/cameron-cartwright/" target="_blank">LinkedIn</a><br>
+                <a href="https://github.com/Krone404" target="_blank">GitHub</a>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer">Footer</div>
+
+</body>
+
+<script src="script.js"></script>
+
+</html>
