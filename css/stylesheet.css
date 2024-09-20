@@ -87,7 +87,6 @@ body::-webkit-scrollbar {
     height: 60px;
     width: 100vw;
     min-width: 350px;
-    background-color: rgb(48, 48, 48);
     position: fixed;
 }
 
@@ -107,7 +106,6 @@ body::-webkit-scrollbar {
     border-style: solid;
     border-top: 0px;
     border-bottom: 0px;
-    
     font-size: 16px;
     transition: font-size 0.3s ease;
     -webkit-transition: font-size 0.3s ease;
@@ -115,7 +113,6 @@ body::-webkit-scrollbar {
 }
 
 .navButton:hover {
-    
     font-size: 20px;
 }
 
@@ -133,6 +130,5 @@ body::-webkit-scrollbar {
 #footer {
     height: 60px;
     text-align: center;
-    padding: 20px;
-    
+    padding: 20px; 
 }
