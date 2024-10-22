@@ -1,13 +1,10 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
-
     color-scheme: light dark;
-
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -16,7 +13,7 @@
 
 @media (prefers-color-scheme: light) {
     :root {
-      color: rgba(0, 0, 0, 0.87);; /* Set text color to black for light mode, if needed */
+      color: rgba(0, 0, 0, 0.87);
       background-color: #dbdbdb;
     }
 
@@ -35,11 +32,11 @@
     #footer{
         background-color: rgb(228, 228, 228);
     }
-  }
-  
-  @media (prefers-color-scheme: dark) {
+}
+
+@media (prefers-color-scheme: dark) {
     :root {
-      color: rgba(255, 255, 255, 0.87);; /* Set text color to white for dark mode */
+      color: rgba(255, 255, 255, 0.87);
       background-color: #242424;
     }
 
@@ -58,7 +55,7 @@
     #footer{
         background-color: rgb(27, 27, 27);
     }
-  }
+}
 
 * {
     font-family: Montserrat;
@@ -88,6 +85,7 @@ body::-webkit-scrollbar {
     width: 100vw;
     min-width: 350px;
     position: fixed;
+    z-index: 10;
 }
 
 .navBar {
@@ -127,10 +125,27 @@ body::-webkit-scrollbar {
     scroll-snap-align: start;
 }
 
+#home div, #about-me div {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
 .repoCard {
-    background-color: black;
-    max-height: 50vh;
-    max-width: 30%;
+    background-color: #393939;
+    position: relative;
+    max-width: 33%;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for both movement and shadow */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Initial shadow */
+    transform-style: preserve-3d; /* Ensure the 3D effect is preserved */
+    perspective: 1000px; /* Perspective for 3D transformation */
+}
+
+/* Hover effect: adding a 3D tilt */
+.repoCard:hover {
+    transform: translate(-10px, -10px); /* Lift the bottom-right and rotate slightly for 3D */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3); /* Adjust the shadow to enhance the 3D look */
 }
 
 .repoCard a {
@@ -147,6 +162,95 @@ body::-webkit-scrollbar {
 .repoCard p {
     margin: 5px 10px 0px 10px;
     text-align: center;
+}
+
+/* Contributors section */
+.contributors {
+    margin-top: 10px;
+}
+
+/* Container to hold the overlapping avatars */
+.avatar-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 50px;  /* Adjust based on the desired size */
+    margin-left: 20px;
+}
+
+/* Styling each avatar */
+.contributor-avatar {
+    width: 40px;   /* Size of each avatar */
+    height: 40px;
+    border-radius: 50%;  /* Make the avatar circular */
+    border: 2px solid white;  /* White border around each avatar */
+    margin-left: -10px;  /* Creates the overlap effect */
+    z-index: 1;
+    object-fit: cover;
+}
+
+/* Increase z-index for each subsequent avatar */
+.contributor-avatar:nth-child(2) { z-index: 2; }
+.contributor-avatar:nth-child(3) { z-index: 3; }
+.contributor-avatar:nth-child(4) { z-index: 4; }
+
+/* If there are more than 4 contributors */
+.more-contributors {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;  /* Gray background for the "more" circle */
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: -10px;  /* Overlap */
+    z-index: 5;
+}
+
+.social-media-icon-container {
+    display: flex;
+    justify-content: center;  /* Align icons to the center horizontally */
+    align-items: center;      /* Align icons vertically */
+    gap: 50px;                /* Space between icons */
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: #202020;
+    border: 2px solid rgb(60, 60, 60);
+    border-radius: 10%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#linkedin div:hover {
+    box-shadow: 0px 0px 40px 10px rgba(0, 119, 181, 255);
+    border: 2px solid rgba(0, 119, 181, 255);
+    transform: scale(1.1);
+}
+
+#github div:hover {
+    box-shadow: 0px 0px 40px 10px rgba(92, 107, 192, 255);
+    border: 2px solid rgba(92, 107, 192, 255);
+    transform: scale(1.1);
+}
+
+#email div:hover {
+    box-shadow: 0px 0px 40px 10px rgba(244, 67, 54, 255);
+    border: 2px solid rgba(244, 67, 54, 255);
+    transform: scale(1.1);
+}
+
+
+.image-container img {
+    width: 60px;
+    height: 60px;
 }
 
 #footer {
